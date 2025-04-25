@@ -1,0 +1,21 @@
+
+/* Tooltip text styling */
+.tooltip-text {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Ensure tooltip width, wrapping, and left alignment */
+.tooltip-inner {
+  white-space: pre-line; 
+  max-width: 1200px; /* Adjust the maximum width for your tooltip */
+  text-align: left; /* Align text to the left */
+  word-wrap: break-word; /* Break long words if necessary */
+  overflow-wrap: break-word; /* Ensure long words break */
+}
+
+.callout[title]:hover::after {
+  content: none;
+}
+

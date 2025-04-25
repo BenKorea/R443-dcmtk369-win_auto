@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Template",
+    "section": "",
+    "text": "#| label: load-scripts\n#| echo: false\n\nproject_root &lt;- rprojroot::find_root(rprojroot::is_rstudio_project)\n\ncustom_load_scripts &lt;- function (source_folder) {\n  source_path &lt;- file.path(project_root, source_folder)\n  r_files &lt;- list.files(source_path, pattern = \"\\\\.R$\", full.names = TRUE)\n  invisible(lapply(r_files, source))\n}\n\ncustom_load_scripts(\"source\")\n툴팁은 특정문자이 구현되어야 한다.\nrecommeded project name\n\nR-4.4.1-Hands_on_Shinylive_Example"
+  },
+  {
+    "objectID": "index.html#목적",
+    "href": "index.html#목적",
+    "title": "Template",
+    "section": "목적",
+    "text": "목적\n\nQuarto Website 프로젝트를 생성하고 Bootstrap tooltip 및 Utterance 기능구현을 위한 설정, Render 기능을 위한 기본적인 R 패키지 설치까지를 template화 함."
+  },
+  {
+    "objectID": "index.html#개별요소-활용방법",
+    "href": "index.html#개별요소-활용방법",
+    "title": "Template",
+    "section": "개별요소 활용방법",
+    "text": "개별요소 활용방법\n\ncustom function scripts 일괄 호출 청크\n\ngetwd() 명령이 포함된 *.qmd 파일이 프로젝트 디렉토리에 있으면 getwd()를 사용하여도 무방합니다.\n그러나 저자와 같이 *.qmd 파일이 프로젝트 디렉토리가 아닌 하부 디렉토리에 있으면 getwd()는 프로젝트 디렉토리가 아닌 *.qmd 파일의 경로를 반환하여 원치 않은 결과를 초래합니다.\n이를 위해서 *.qmd 파일의 경로와 무관하게 프로젝트 디렉토리의 경로를 반환받기 위해 rporjroot::find_root(rprojroot::is_rstudio_project)를 사용하였습니다.\n\n\nCallout with color\n\n위의 예시와 같이 style 속성을 사용하여 배경색상을 지정할 수 있습니다.\nHTML 문법에 맞게 작성되어야 하며, 코드의 가독성 때문에 줄바꿈은 사용하면 작동하지 않으므로 주의해야 합니다."
+  }
+]
