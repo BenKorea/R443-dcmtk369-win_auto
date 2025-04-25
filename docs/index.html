@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="BenKorea feat. ChatGPT">
-<meta name="dcterms.date" content="2024-12-17">
-<meta name="description" content="Github에서 사용할 수 있는 template">
+<meta name="author" content="BenKorea">
+<meta name="dcterms.date" content="2025-04-25">
+<meta name="description" content="dcmtk를 이용한 윈도우에서의 자동화">
 
-<title>Template</title>
+<title>win_auto – Template</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a78d143f50226e98f7090688eeb399e8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -152,13 +152,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#목적" id="toc-목적" class="nav-link active" data-scroll-target="#목적">목적</a></li>
-  <li><a href="#개별요소-활용방법" id="toc-개별요소-활용방법" class="nav-link" data-scroll-target="#개별요소-활용방법">개별요소 활용방법</a>
+  <li><a href="#매뉴얼" id="toc-매뉴얼" class="nav-link active" data-scroll-target="#매뉴얼">매뉴얼</a></li>
+  <li><a href="#ps1-파일-사용설정" id="toc-ps1-파일-사용설정" class="nav-link" data-scroll-target="#ps1-파일-사용설정">*.ps1 파일 사용설정</a></li>
+  <li><a href="#r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" id="toc-r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" class="nav-link" data-scroll-target="#r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---"><code>{r configuration_set, echo=FALSE, filename="관리자권한: PowerShell"} Set-ExecutionPolicy AllSigned &lt;!--</code> –&gt;</a>
   <ul>
-  <li><a href="#custom-function-scripts-일괄-호출-청크" id="toc-custom-function-scripts-일괄-호출-청크" class="nav-link" data-scroll-target="#custom-function-scripts-일괄-호출-청크">custom function scripts 일괄 호출 청크</a>
-  <ul class="collapse">
-  <li><a href="#callout-with-color" id="toc-callout-with-color" class="nav-link" data-scroll-target="#callout-with-color">Callout with color</a></li>
-  </ul></li>
+  <li><a href="#ps1-파일의-실행" id="toc-ps1-파일의-실행" class="nav-link" data-scroll-target="#ps1-파일의-실행">*.ps1 파일의 실행</a></li>
+  <li><a href="#권한-설정한" id="toc-권한-설정한" class="nav-link" data-scroll-target="#권한-설정한">권한 설정한</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,15 +167,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Template</h1>
+<h1 class="title">win_auto</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Template</div>
+    <div class="quarto-category">dcktk</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Github에서 사용할 수 있는 template
+    dcmtk를 이용한 윈도우에서의 자동화
   </div>
 </div>
 
@@ -186,21 +185,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>BenKorea feat. ChatGPT </p>
+             <p>BenKorea </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 17, 2024</p>
+      <p class="date">April 25, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 28, 2025</p>
+      <p class="date-modified">April 25, 2025</p>
     </div>
   </div>
     
@@ -211,72 +210,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-scripts</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>project_root <span class="ot">&lt;-</span> rprojroot<span class="sc">::</span><span class="fu">find_root</span>(rprojroot<span class="sc">::</span>is_rstudio_project)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>custom_load_scripts <span class="ot">&lt;-</span> <span class="cf">function</span> (source_folder) {</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  source_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(project_root, source_folder)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  r_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(source_path, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.R$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(<span class="fu">lapply</span>(r_files, source))</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">custom_load_scripts</span>(<span class="st">"source"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="제목을 입력하세요" style="background-color: #f0f8ff">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-제목을 입력하세요
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<ul class="task-list">
-<li><label><input type="checkbox" checked="">check된 box</label></li>
-<li><label><input type="checkbox">check되지 않은 box</label></li>
+<section id="매뉴얼" class="level2">
+<h2 class="anchored" data-anchor-id="매뉴얼">매뉴얼</h2>
+<p><a href="https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5" class="uri">https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5</a></p>
+</section>
+<section id="ps1-파일-사용설정" class="level2">
+<h2 class="anchored" data-anchor-id="ps1-파일-사용설정">*.ps1 파일 사용설정</h2>
+</section>
+<section id="r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" class="level1">
+<h1><code>{r configuration_set, echo=FALSE, filename="관리자권한: PowerShell"} Set-ExecutionPolicy AllSigned &lt;!--</code> –&gt;</h1>
+<section id="ps1-파일의-실행" class="level2">
+<h2 class="anchored" data-anchor-id="ps1-파일의-실행">*.ps1 파일의 실행</h2>
+<ul>
+<li>경로와 파일 이름을 지정하여 실행합니다.</li>
 </ul>
-</div>
-</div>
-</div>
-<p>툴팁은 <span class="text-primary" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="bottom" title="1열<br> 2열"><code>특정문자</code></span>이 구현되어야 한다.</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>recommeded project name</strong></pre>
+<pre><strong>PowerShell</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>R<span class="dv">-4</span>.<span class="fl">4.1</span><span class="sc">-</span>Hands_on_Shinylive_Example</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>C<span class="sc">:</span>\Projects\R443<span class="sc">-</span>dcmtk369<span class="sc">-</span>win_auto\scripts\copy_to_orthanc.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<section id="목적" class="level2">
-<h2 class="anchored" data-anchor-id="목적">목적</h2>
-<ul>
-<li>Quarto Website 프로젝트를 생성하고 Bootstrap tooltip 및 Utterance 기능구현을 위한 설정, Render 기능을 위한 기본적인 R 패키지 설치까지를 template화 함.</li>
-</ul>
 </section>
-<section id="개별요소-활용방법" class="level2">
-<h2 class="anchored" data-anchor-id="개별요소-활용방법">개별요소 활용방법</h2>
-<section id="custom-function-scripts-일괄-호출-청크" class="level3">
-<h3 class="anchored" data-anchor-id="custom-function-scripts-일괄-호출-청크">custom function scripts 일괄 호출 청크</h3>
-<ul>
-<li><code>getwd()</code> 명령이 포함된 *.qmd 파일이 프로젝트 디렉토리에 있으면 <code>getwd()</code>를 사용하여도 무방합니다.</li>
-<li>그러나 저자와 같이 <code>*.qmd</code> 파일이 프로젝트 디렉토리가 아닌 하부 디렉토리에 있으면 <code>getwd()</code>는 프로젝트 디렉토리가 아닌 <code>*.qmd</code> 파일의 경로를 반환하여 원치 않은 결과를 초래합니다.</li>
-<li>이를 위해서 <code>*.qmd</code> 파일의 경로와 무관하게 프로젝트 디렉토리의 경로를 반환받기 위해 <code>rporjroot::find_root(rprojroot::is_rstudio_project)</code>를 사용하였습니다.</li>
-</ul>
-<section id="callout-with-color" class="level4">
-<h4 class="anchored" data-anchor-id="callout-with-color">Callout with color</h4>
-<ul>
-<li>위의 예시와 같이 style 속성을 사용하여 배경색상을 지정할 수 있습니다.</li>
-<li>HTML 문법에 맞게 작성되어야 하며, 코드의 가독성 때문에 줄바꿈은 사용하면 작동하지 않으므로 주의해야 합니다.</li>
-</ul>
+<section id="권한-설정한" class="level2">
+<h2 class="anchored" data-anchor-id="권한-설정한">권한 설정한</h2>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PowerShell</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Set<span class="sc">-</span>ExecutionPolicy RemoteSigned <span class="sc">-</span>Scope CurrentUser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 
