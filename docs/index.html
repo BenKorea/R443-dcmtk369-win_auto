@@ -152,13 +152,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#매뉴얼" id="toc-매뉴얼" class="nav-link active" data-scroll-target="#매뉴얼">매뉴얼</a></li>
+  <li><a href="#윈도우용-docker-desktop-제거" id="toc-윈도우용-docker-desktop-제거" class="nav-link active" data-scroll-target="#윈도우용-docker-desktop-제거">윈도우용 Docker Desktop 제거</a></li>
+  <li><a href="#원도우용-docker-desktop-설치" id="toc-원도우용-docker-desktop-설치" class="nav-link" data-scroll-target="#원도우용-docker-desktop-설치">원도우용 Docker Desktop 설치</a></li>
+  <li><a href="#매뉴얼" id="toc-매뉴얼" class="nav-link" data-scroll-target="#매뉴얼">매뉴얼</a></li>
   <li><a href="#ps1-파일-사용설정" id="toc-ps1-파일-사용설정" class="nav-link" data-scroll-target="#ps1-파일-사용설정">*.ps1 파일 사용설정</a></li>
-  <li><a href="#r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" id="toc-r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" class="nav-link" data-scroll-target="#r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---"><code>{r configuration_set, echo=FALSE, filename="관리자권한: PowerShell"} Set-ExecutionPolicy AllSigned &lt;!--</code> –&gt;</a>
-  <ul>
   <li><a href="#ps1-파일의-실행" id="toc-ps1-파일의-실행" class="nav-link" data-scroll-target="#ps1-파일의-실행">*.ps1 파일의 실행</a></li>
   <li><a href="#권한-설정한" id="toc-권한-설정한" class="nav-link" data-scroll-target="#권한-설정한">권한 설정한</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -169,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">win_auto</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">dcktk</div>
+    <div class="quarto-category">dcmtk</div>
   </div>
   </div>
 
@@ -199,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 25, 2025</p>
+      <p class="date-modified">April 26, 2025</p>
     </div>
   </div>
     
@@ -210,15 +209,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="윈도우용-docker-desktop-제거" class="level2">
+<h2 class="anchored" data-anchor-id="윈도우용-docker-desktop-제거">윈도우용 Docker Desktop 제거</h2>
+<ul>
+<li>제어판 &gt; 프로그램 &gt; 앱제거</li>
+<li>docker-desktop 제거</li>
+</ul>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>관리자권한: PowerShell</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="sc">--</span>list <span class="sc">--</span>verbose</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>관리자권한: PowerShell</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wsl <span class="sc">--</span>unregister docker<span class="sc">-</span>desktop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Windows Hypervisor Platform 체크 해제</p>
+</section>
+<section id="원도우용-docker-desktop-설치" class="level2">
+<h2 class="anchored" data-anchor-id="원도우용-docker-desktop-설치">원도우용 Docker Desktop 설치</h2>
+<ul>
+<li>다운로드사이트: <a href="https://www.docker.com/" class="uri">https://www.docker.com/</a></li>
+<li>Download Docker Desktop button</li>
+<li>Download for Windows - AMD64</li>
+<li>다운로드된 <code>Docker Desktop installer.exe</code>를 관리자권한으로 실행하여 설치</li>
+</ul>
+</section>
 <section id="매뉴얼" class="level2">
 <h2 class="anchored" data-anchor-id="매뉴얼">매뉴얼</h2>
 <p><a href="https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5" class="uri">https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5</a></p>
 </section>
 <section id="ps1-파일-사용설정" class="level2">
 <h2 class="anchored" data-anchor-id="ps1-파일-사용설정">*.ps1 파일 사용설정</h2>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>관리자권한: PowerShell</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Set<span class="sc">-</span>ExecutionPolicy Unrestricted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="r-configuration_set-echofalse-filename관리자권한-powershell-set-executionpolicy-allsigned---" class="level1">
-<h1><code>{r configuration_set, echo=FALSE, filename="관리자권한: PowerShell"} Set-ExecutionPolicy AllSigned &lt;!--</code> –&gt;</h1>
 <section id="ps1-파일의-실행" class="level2">
 <h2 class="anchored" data-anchor-id="ps1-파일의-실행">*.ps1 파일의 실행</h2>
 <ul>
@@ -229,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>PowerShell</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>C<span class="sc">:</span>\Projects\R443<span class="sc">-</span>dcmtk369<span class="sc">-</span>win_auto\scripts\copy_to_orthanc.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>C<span class="sc">:</span>\Projects\R443<span class="sc">-</span>dcmtk369<span class="sc">-</span>win_auto\scripts\copy_to_orthanc.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -240,12 +278,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-with-filename-file">
 <pre><strong>PowerShell</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Set<span class="sc">-</span>ExecutionPolicy RemoteSigned <span class="sc">-</span>Scope CurrentUser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Set<span class="sc">-</span>ExecutionPolicy RemoteSigned <span class="sc">-</span>Scope CurrentUser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>PowerShell</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>C<span class="sc">:</span>\Projects\R443<span class="sc">-</span>dcmtk369<span class="sc">-</span>win_auto\scripts\retrieving_to_nmdose.ps1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

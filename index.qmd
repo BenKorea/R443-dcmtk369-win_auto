@@ -4,8 +4,55 @@ description:  "dcmtk를 이용한 윈도우에서의 자동화"
 author: "BenKorea"
 date: "2025-04-25"
 date-modified: last-modified
-categories: [dcktk]
+categories: [dcmtk]
 ---
+
+## 윈도우용 Docker Desktop 제거
+- 제어판 > 프로그램 > 앱제거
+- docker-desktop 제거
+```{r distribution_check, eval=FALSE, filename="관리자권한: PowerShell"}
+wsl --list --verbose
+```
+
+```{r docker_desktop_uninstall, eval=FALSE, filename="관리자권한: PowerShell"}
+wsl --unregister docker-desktop
+```
+
+
+## 원도우용 Docker Desktop 설치
+- 다운로드사이트: <https://www.docker.com/>
+- Download Docker Desktop button
+- Download for Windows - AMD64
+- 다운로드된 `Docker Desktop installer.exe`를 관리자권한으로 실행하여 설치
+- Docker Desktop 4.40.0 (187762)
+- Docker Subscription Service Agreement -> Accept
+- Sign In 해야하며, ID password가 나중에 필요
+- 재부팅
+
+## 설치 검증
+```{r docker_check, eval=FALSE, filename="PowerShell"}
+docker --version
+```
+
+```{r docker_check2, eval=FALSE, filename="PowerShell"}
+docker compose version
+```
+
+```{r docker_check3, eval=FALSE, filename="PowerShell"}
+docker run hello-world
+```
+
+## Orthanc_PostgreSQL 설치
+```{r orthanc_postgresql, eval=FALSE, filename="PowerShell"}
+mkdir orthanc-postgresql
+cd orthanc-postgresql
+```
+- <https://github.com/orthanc-server/orthanc-setup-samples/blob/master/docker/postgresql/docker-compose.yml>
+```{r }
+
+
+
+
 
 
 ## 매뉴얼
@@ -13,9 +60,9 @@ categories: [dcktk]
 
 ## *.ps1 파일 사용설정
 
-# ```{r configuration_set, echo=FALSE, filename="관리자권한: PowerShell"}
-Set-ExecutionPolicy AllSigned
-<!-- ``` -->
+```{r configuration_set, eval=FALSE, filename="관리자권한: PowerShell"}
+Set-ExecutionPolicy Unrestricted
+```
 
 
 ## *.ps1 파일의 실행
@@ -30,3 +77,6 @@ C:\Projects\R443-dcmtk369-win_auto\scripts\copy_to_orthanc.ps1
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
+```{r, ps1_excution2, eval=FALSE, filename="PowerShell"}
+C:\Projects\R443-dcmtk369-win_auto\scripts\retrieving_to_nmdose.ps1
+```

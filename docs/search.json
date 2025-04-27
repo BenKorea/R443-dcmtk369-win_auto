@@ -4,21 +4,35 @@
     "href": "index.html",
     "title": "win_auto",
     "section": "",
-    "text": "https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5"
+    "text": "제어판 &gt; 프로그램 &gt; 앱제거\ndocker-desktop 제거\n\n\n\n\n관리자권한: PowerShell\n\nwsl --list --verbose\n\n\n\n\n\n관리자권한: PowerShell\n\nwsl --unregister docker-desktop\n\n\nWindows Hypervisor Platform 체크 해제"
+  },
+  {
+    "objectID": "index.html#윈도우용-docker-desktop-제거",
+    "href": "index.html#윈도우용-docker-desktop-제거",
+    "title": "win_auto",
+    "section": "",
+    "text": "제어판 &gt; 프로그램 &gt; 앱제거\ndocker-desktop 제거\n\n\n\n\n관리자권한: PowerShell\n\nwsl --list --verbose\n\n\n\n\n\n관리자권한: PowerShell\n\nwsl --unregister docker-desktop\n\n\nWindows Hypervisor Platform 체크 해제"
+  },
+  {
+    "objectID": "index.html#원도우용-docker-desktop-설치",
+    "href": "index.html#원도우용-docker-desktop-설치",
+    "title": "win_auto",
+    "section": "원도우용 Docker Desktop 설치",
+    "text": "원도우용 Docker Desktop 설치\n\n다운로드사이트: https://www.docker.com/\nDownload Docker Desktop button\nDownload for Windows - AMD64\n다운로드된 Docker Desktop installer.exe를 관리자권한으로 실행하여 설치"
   },
   {
     "objectID": "index.html#매뉴얼",
     "href": "index.html#매뉴얼",
     "title": "win_auto",
-    "section": "",
-    "text": "https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5"
+    "section": "매뉴얼",
+    "text": "매뉴얼\nhttps://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-7.5"
   },
   {
     "objectID": "index.html#ps1-파일-사용설정",
     "href": "index.html#ps1-파일-사용설정",
     "title": "win_auto",
     "section": "*.ps1 파일 사용설정",
-    "text": "*.ps1 파일 사용설정"
+    "text": "*.ps1 파일 사용설정\n\n\n\n관리자권한: PowerShell\n\nSet-ExecutionPolicy Unrestricted"
   },
   {
     "objectID": "index.html#ps1-파일의-실행",
@@ -32,6 +46,6 @@
     "href": "index.html#권한-설정한",
     "title": "win_auto",
     "section": "권한 설정한",
-    "text": "권한 설정한\n\n\n\nPowerShell\n\nSet-ExecutionPolicy RemoteSigned -Scope CurrentUser"
+    "text": "권한 설정한\n\n\n\nPowerShell\n\nSet-ExecutionPolicy RemoteSigned -Scope CurrentUser\n\n\n\n\n\nPowerShell\n\nC:\\Projects\\R443-dcmtk369-win_auto\\scripts\\retrieving_to_nmdose.ps1"
   }
 ]

@@ -1,18 +1,23 @@
-$config = Get-Content "$PSScriptRoot\config\config.json" | ConvertFrom-Json
+<#
+.SYNOPSIS
+  NMPACS to ORTHANC study copy script (debug output enabled)
+.DESCRIPTION
+  Query PT modality studies within a date range and perform C-MOVE from remote (NMPACS) to local (ORTHANC), printing debug messages.
+#>
 
-$AETLocal  = $config.NMPACS.CallingAET
-$AETRemote = $config.NMPACS.AET
-$DicomHost = $config.NMPACS.Host
-$Port      = $config.NMPACS.Port
-$DateRange = $config.Transfer.DateRange
-$Modality  = $config.Transfer.Modality
-
+# Variables
+$AETLocal  = "NMDOSE"
+$AETRemote = "ORTHANC"
+$DicomHost = "127.0.0.1"
+$Port      = 4242
+$DateRange = "20231201-20231291"
+$Modality  = "PT"
 
 # Start message
 Write-Host "Script started for date range $DateRange and modality $Modality" -ForegroundColor Cyan
 
-# 1) Query UIDs on NMPACS
-Write-Host "Querying studies on NMPACS..." -ForegroundColor Yellow
+# 1) Query UIDs on ORTHANC
+Write-Host "Querying studies on ORTHANC..." -ForegroundColor Yellow
 
 $uids = @(
     & findscu -v -S -aet $AETLocal -aec $AETRemote $DicomHost $Port -k QueryRetrieveLevel=STUDY -k StudyDate=$DateRange -k ModalitiesInStudy=$Modality -k StudyInstanceUID 2>&1 |

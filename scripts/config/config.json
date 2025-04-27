@@ -1,0 +1,12 @@
+{
+  "NMPACS": {
+    "Host": "172.17.111.214",
+    "Port": 104,
+    "AET": "NMPACS",
+    "CallingAET": "ORTHANC"
+  },
+  "Transfer": {
+    "DateRange": "20250103-20250103",
+    "Modality": "NM"
+  }
+}
